@@ -1,0 +1,6 @@
+hirofumi@hirofumi-VirtualBox:~/haskell/compare_yesod_rails$ sed -e 's/},{/}\n{/g;s/[{}\[]//g;s/\]//g;' output.rails | ./sort_elem | sed -e 's/,"url".*$//' >output.rails.mod
+hirofumi@hirofumi-VirtualBox:~/haskell/compare_yesod_rails$ sed -e 's/}{/}\n{/g;s/[{}\[]//g;s/\]//g;' output.yesod | ./sort_elem | sed -e 's/,"url".*$//' >output.yesod.mod
+hirofumi@hirofumi-VirtualBox:~/haskell/compare_yesod_rails$ ls -l output.*.mod
+-rw-rw-r-- 1 hirofumi hirofumi 2081795  4月 11 15:28 output.rails.mod
+-rw-rw-r-- 1 hirofumi hirofumi 2081795  4月 11 15:28 output.yesod.mod
+hirofumi@hirofumi-VirtualBox:~/haskell/compare_yesod_rails$ diff output.rails.mod output.yesod.mod 
